@@ -1,0 +1,1 @@
+# Create a directory here and store logs with format TIMESTAMP-SCANTYPE.log
