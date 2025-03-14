@@ -1,9 +1,9 @@
-from gi.repository import Gtk, GLib, Gdk, Pango
 import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk, GLib, Gdk, Pango
 import os
 import time
 from threading import Thread
-gi.require_version("Gtk", "3.0")
 
 
 class BannerWindow(Gtk.Window):
@@ -288,8 +288,10 @@ class MainAppWindow(Gtk.Window):
         self.content_area.show_all()
 
     def on_antivirus_clicked(self, widget):
-        print("Antivirus scan option selected")
-        # TODO : Call your antivirus scan script here
+        from antivirus import AntivirusScanWindow
+        scan_window = AntivirusScanWindow(self)
+        scan_window.show_all()
+        # TODO : Check for errors
         
     def on_network_clicked(self, widget):
         print("Network scan option selected")
