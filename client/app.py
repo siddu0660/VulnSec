@@ -294,8 +294,10 @@ class MainAppWindow(Gtk.Window):
         # TODO : Check for errors
         
     def on_network_clicked(self, widget):
-        print("Network scan option selected")
-        # TODO : Call your network scan script here
+        from networkSec import NetworkScanWindow
+        scan_window = NetworkScanWindow(self)
+        scan_window.show_all()
+        # TODO : Check for errors
         
     def on_firewall_clicked(self, widget):
         print("Firewall option selected")
